@@ -8,6 +8,11 @@ import {
   deleteNote,
   updateNote,
 } from '../controllers/notesController.js';
+const notesRoutes = Router();
+
+// routes...
+
+export default notesRoutes;
 
 export const notesRoutes = Router();
 

@@ -1,10 +1,14 @@
-// src/middleware/errorHandler.js
+import { HttpError } from 'http-errors';
 
 export const errorHandler = (error, req, res, next) => {
-  const status = error.status ?? 500;
-  const message = status === 500 ? 'Internal Server Error' : error.message;
+  if (error instanceof HttpError) {
+    return res.status(error.status).json({
+      message: error.message,
+    });
+  }
 
-  res.status(status).json({
-    message,
+  res.status(500).json({
+    message: 'Internal Server Error',
   });
 };
+

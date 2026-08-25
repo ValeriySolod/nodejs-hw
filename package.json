@@ -1,7 +1,6 @@
 {
   "name": "nodejs-hw",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "src/server.js",
   "scripts": {
@@ -16,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/ValeriySolod/nodejs-hw/issues"
   },
@@ -30,6 +30,8 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "http-errors": "^2.0.1",
+    "mongoose": "^9.9.2",
     "pino-http": "^11.0.0",
     "pino-pretty": "^13.1.3"
   }

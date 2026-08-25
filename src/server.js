@@ -2,6 +2,7 @@
 import express from 'express';
 import 'dotenv/config';
 import cors from 'cors';
+import { errors } from 'celebrate';
 
 import { connectMongoDB } from './db/connectMongoDB.js';
 import { logger } from './middleware/logger.js';
@@ -21,6 +22,9 @@ app.use(notesRoutes);
 
 // 404 — якщо маршрут не знайдено
 app.use(notFoundHandler);
+
+// Celebrate — перетворює помилки валідації Joi у відповіді Express
+app.use(errors());
 
 // Error — якщо під час запиту виникла помилка
 app.use(errorHandler);

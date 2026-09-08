@@ -34,6 +34,8 @@ const userSchema = new Schema(
 );
 
 userSchema.pre('save', function () {
-  this.username = this.email;
+  if (!this.username) {
+    this.username = this.email;
+  }
 });
 export const User = model('User', userSchema, 'users');
